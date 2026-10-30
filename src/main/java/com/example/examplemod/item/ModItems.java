@@ -12,24 +12,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
-            DeferredRegister.createItems(TutorialMod.MOD_ID);
-    // Registrasi Item Bahan (Ruby)
+            DeferredRegister.createItems(AcademyMod.MODID);
 
-    public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
-
-            () -> new Item(new Item.Properties()));
-
-    // Registrasi Item Bahan Tambahan (Raw Ruby)
-
-    public static final DeferredItem<Item> RAW_RUBY = ITEMS.register("raw_ruby",
-
-            () -> new Item(new Item.Properties()));
-
-    public static void register(IEventBus eventBus) {
-
-        ITEMS.register(eventBus);
-
-    }
+    public static final DeferredItem<Item> RAW_AURIC =
+            ITEMS.registerItem("raw_auric", Item::new, Item.Properties::new);
+    public static final DeferredItem<Item> AURIC_SHARD =
+            ITEMS.registerItem("auric_shard", Item::new, Item.Properties::new);
 
     public static final DeferredItem<Item> AURIC_SWORD = ITEMS.registerItem("auric_sword",
             properties -> new Item(properties.sword(ModToolTiers.AURIC, 3, -2.4f)));
@@ -50,6 +38,7 @@ public class ModItems {
             properties -> new Item(properties.humanoidArmor(ModArmorMaterials.AURIC_ARMOR_MATERIAL, ArmorType.LEGGINGS)));
     public static final DeferredItem<Item> AURIC_BOOTS = ITEMS.registerItem("auric_boots",
             properties -> new Item(properties.humanoidArmor(ModArmorMaterials.AURIC_ARMOR_MATERIAL, ArmorType.BOOTS)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
