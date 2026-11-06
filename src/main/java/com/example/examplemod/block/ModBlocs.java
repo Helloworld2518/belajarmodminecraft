@@ -1,6 +1,6 @@
 package net.kaupenjoe.academymod.block;
 
-import com.example.examplemod.LearningMod;
+import com.example.examplemod.AcademyMod;
 import com.example.examplemod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
